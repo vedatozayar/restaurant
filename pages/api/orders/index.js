@@ -1,8 +1,10 @@
 import dbConnect from '../../../util/mongo';
-import Product from '../../../models/Product';
+import Order from '../../../models/Order';
 
 const handler = async (req, res) => {
   const { method } = req;
+
+  await dbConnect();
 
   if (method === 'GET') {
     try {
